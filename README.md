@@ -7,4 +7,4 @@ On push-request to main branch:
 ### Requirements
 
 1. DOCKER_USERNAME and DOCKER_PASSWORD stored as secrets in GitHub secrets
-2. Write permissions for GITHUB_TOKEN Workflow permissions in CD_part repo
+2. Personal Access Token (PAT) issued by CD_part repo and stored as CD_PAT secret in GitHub secrets

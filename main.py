@@ -5,8 +5,8 @@ import uvicorn
 app = FastAPI()
 
 @app.get("/")
-async def welocme():
-    return {"message": "Hello world!"}
+async def welocome():
+    return {"message": "It is working!"}
 
 
 if __name__ == "__main__":

@@ -50,7 +50,7 @@ jobs:
         run: |
           cd cd-repo
           # Update the image tag in the manifest using sed
-          sed -i "s|$IMAGE_NAME:.*|$IMAGE_NAME:$VERSION|" kubernetes_deployments/fastapi_manifest.yml
+          sed -i "s|$IMAGE_NAME:.*|$IMAGE_NAME:$VERSION|" kubernetes_deployments/charts/webapp/values.yaml
 
       - name: Commit and push changes
         env:
@@ -60,6 +60,6 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/ruslan-rusanovich/CD_part.git
-          git add kubernetes_deployments/fastapi_manifest.yml
+          git add kubernetes_deployments/charts/webapp/values.yaml
           git commit -m "Update image tag to $VERSION"
           git push
